@@ -1,0 +1,194 @@
+/* 1. Reset default browser styles a bit */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Basic page settings */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  direction: rtl;           /* Important: Arabic text flows right-to-left */
+}
+
+/* 3. Main layout: two columns side by side */
+.container {
+  display: flex;
+  flex-direction: row-reverse;  /* NEW: reverses left/right order */
+  height: 100vh;
+}
+
+
+/* 4. LEFT PANEL (blue area with logo and text) */
+.left-panel {
+  flex: 1;                  /* Take half of the screen */
+  background-color: #004c63;/* Dark teal/blue (adjust if you want) */
+  color: #ffffff;           /* White text */
+  display: flex;            /* Use flexbox to center content */
+  flex-direction: column;   /* Stack logo and text vertically */
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+  padding: 2rem;
+}
+
+/* Logo image */
+.logo {
+  max-width: 70%;           /* Don’t let the logo be too big */
+  height: auto;             /* Keep the aspect ratio */
+  margin-bottom: 1.5rem;
+}
+
+/* Text under the logo */
+.left-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.left-text p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* 5. RIGHT PANEL (white area with title and login form) */
+.right-panel {
+  flex: 1;                  /* Other half of the screen */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* System title text */
+.system-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  margin-top: -40px; /* Lift upwards */
+}
+
+/* 6. LOGIN FORM STYLING */
+.login-form {
+  width: 100%;
+  max-width: 360px;         /* Keep form from being too wide */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;                /* Space between inputs */
+}
+
+/* Inputs and dropdown */
+.login-form input,
+.login-form select {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;            /* Remove blue outline */
+}
+
+/* Highlight input when focused */
+.login-form input:focus,
+.login-form select:focus {
+  border-color: #004c63;
+  box-shadow: 0 0 0 2px rgba(0, 76, 99, 0.15);
+}
+
+/* Login button */
+.login-button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background-color: #004c63;
+  color: #ffffff;
+}
+
+/* Button hover (when mouse is on it) */
+.login-button:hover {
+  opacity: 0.9;
+}
+
+/* Error message text */
+.error-message {
+  color: #c0392b;           /* Red color */
+  font-size: 0.85rem;
+  min-height: 1.1em;        /* Reserve space even when empty */
+}
+/* 7. Make it look OK on small screens (like phones) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack panels vertically instead of side-by-side */
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+  }
+
+  .left-panel {
+    padding: 1.5rem 1rem;
+  }
+
+  .right-panel {
+    padding: 2rem 1rem;
+  }
+}  /* <-- هنا يقفل الـ media query بس */
+
+/* تنسيق صفحة المرشد الأكاديمي */
+.advisor-container {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.model-button {
+  display: inline-block;
+  width: 70%;
+  padding: 15px;
+  background-color: #004c63;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.model-button:hover {
+  background-color: #006b88;
+  transform: scale(1.03);
+}
+
+.logout-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #004c63;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+

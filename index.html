@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Academic Advising System - Login</title>
+
+  <!-- This line connects our HTML file to the CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <!-- Left side (logo + text) -->
+    <div class="left-panel">
+  <!-- University logo -->
+  <img src="assets/logo-uj.svg" alt="University of Jeddah Logo" class="logo" />
+
+  
+</div>
+
+   <!-- Right side (title + login form) -->
+  <div class="right-panel">
+  <!-- System title -->
+  <h2 class="system-title">Academic Advising System</h2>
+
+  <!-- Login form -->
+  <form id="loginForm" class="login-form">
+    <!-- University ID / Employee ID -->
+    <input
+      type="text"
+      id="userId"
+      placeholder="الرقم الجامعي أو الرقم الوظيفي"
+      required
+    />
+
+   <!-- Password -->
+  <input
+      type="password"
+      id="password"
+      placeholder="كلمة السر"
+      required
+      />
+
+  <!-- Role selector -->
+   <select id="role" required>
+      <option value="">اختر نوع المستخدم</option>
+      <option value="student">طالب</option>
+      <option value="advisor">مرشد أكاديمي</option>
+      <option value="employee">موظف</option>
+    </select>
+
+   <!-- Error message (empty for now) -->
+   <p id="errorMessage" class="error-message"></p>
+
+  <!-- Login button -->
+   <button type="submit" class="login-button">تسجيل دخول</button>
+  </form>
+</div>
+
+  </div>
+
+  <!-- JavaScript file -->
+  <script src="app.js"></script>
+</body>
+</html>
