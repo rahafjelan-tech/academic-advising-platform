@@ -158,7 +158,7 @@ body {
   flex-direction: column;
   gap: 15px;
   align-items: center;
-    margin-top: 15px; 
+    margin-top: 20px; 
   margin-bottom: 30px;
 }
 
@@ -192,5 +192,6 @@ body {
 .logout-link:hover {
   text-decoration: underline;
 }
+
 
 
